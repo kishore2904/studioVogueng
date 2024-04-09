@@ -45,11 +45,26 @@ header{
 
 // heroSection
 section#hero{
+    
     height: calc(100vh - 60px);
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
     color: #fff;
+}
+.mainContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.containerbutton{
+    margin-left: 300px;
+    background-color: rgb(255, 220, 155);
+    max-width: 800px;
+   display: flex;
+   
+    
 }

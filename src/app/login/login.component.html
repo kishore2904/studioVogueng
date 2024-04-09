@@ -1,2 +1,28 @@
-<p>login works!</p>
-<!-- Login or sign In should be on same page -->
+<div class="container mt-4">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="card flex justify-content-center mt-4">
+            <span class="p-float-label">
+                <input pInputText id="userName" formControlName="userName"/>
+                <label for="userName">userName</label>
+              </span>
+        </div>
+      <div class="card flex justify-content-center mt-4">
+        <span class="p-float-label">
+          <input pInputText id="email" formControlName="email"/>
+          <label for="email">email</label>
+        </span>
+        </div>
+        <div class="card flex justify-content-center mt-4">
+            <span class="p-float-label">
+                <input pInputText id="password" formControlName="password"/>
+                <label for="password">password</label>
+              </span>
+        </div>
+        <div class="card flex justify-content-center mt-4">
+            <button pButton type="submit" >Login</button>
+        </div>
+        
+
+    </form>
+  </div>
+  
