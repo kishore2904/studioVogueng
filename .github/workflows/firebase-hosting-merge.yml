@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm install
+      - run: cd studioVogueng
       - run: ng build
       - run: firebase deploy
       - uses: FirebaseExtended/action-hosting-deploy@v0
