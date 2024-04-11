@@ -15,7 +15,7 @@ jobs:
       - run: pwd  # Display current directory
       - run: cd /home/runner/work/studioVogueng/studioVogueng
       #- run: ng build
-      - run: firebase deploy
+      - run: npm run build --prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
