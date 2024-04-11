@@ -4,11 +4,11 @@
             <div class="logo"><a href="#logo">Logo</a></div>
             <ul class="links">
                 <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="">Category</a></li>
                 <li><a href="">Contact</a></li>
                 <li *ngIf="!isLogOut"><p-button (click)="navigateToLogin()" [text]="true">Login</p-button></li>
-                <li *ngIf="isLogOut"><p-button (click)="logOut()"[text]="true">Logout</p-button></li>
+                <li *ngIf="isLogOut"><p-button (click)="logOut()" [text]="true">Logout</p-button></li>
             </ul>
         </div>
     </header>
@@ -16,17 +16,57 @@
         <section id="hero">
             <div class="mainContainer">
                 <div class="container">
-                    <h2>Welcome to My website</h2>
-                    <p>Do you want to explore m</p>
-                    <p-button label="Login" (click)="navigateToLogin()"  severity="warning"></p-button>
-                </div>
-                <div class="containerbutton">
-    
-                    <img src="../../assets/images/banner-removebg-preview.png" alt="">
+                    <h2>Welcome to My Studio Vogue</h2>
+                    <p>Do you want to explore our word</p>
+                    <p-button label="Click Here" severity="warning"></p-button>
                 </div>
             </div>
-            
-
         </section>
+        <section id="about">
+            <div class="testAbout">
+                <h1 class="mt-5">About</h1>
+            </div>
+            <div class="mainAbout grid p-2">
+                <div class="content col-4 ">
+                    <h2>Studio Vogue</h2>
+                    <p class="flex">Welcome to Studio Vogue, where style meets individuality. Established in 2024,
+                        Studio Vogue is a forward-thinking clothing brand dedicated to providing you with personalized
+                        fashion experiences.At Studio Vogue, we believe that clothing is more than just fabric; it's a
+                        form of self-expression. Our mission is to empower individuals to express their unique
+                        personalities through custom-designed t-shirts. We strive to create a community where creativity
+                        knows no bounds and where every garment tells a story.</p>
+                    <p-button label="Know More" severity="danger"></p-button>
+                </div>
+                <div class="but col-8">
+                    <img src="../../assets/images/banner.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="category">
+            <div class="header">
+                <h1>Category</h1>
+
+                <div class="card">
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                                <div class="mb-3">
+                                    <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" [alt]="product.name" class="w-6 shadow-2" />
+                                </div>
+                                <div>
+                                    <h4 class="mb-1">{{ product.name }}</h4>
+                                    <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>
+                                    <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                                    <p-button icon="pi pi-search" [rounded]="true" />
+                                    <p-button icon="pi pi-star-fill" [rounded]="true" severity="secondary" />
+                                </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </section>
+        <!-- <app-about></app-about> -->
     </main>
 </div>
