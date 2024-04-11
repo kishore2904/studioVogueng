@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm install
       - run: pwd  # Display current directory
-      - run: cd studioVogueng
+      - run: cd /home/runner/work/studioVogueng/studioVogueng
       - run: ng build
       - run: firebase deploy
       - uses: FirebaseExtended/action-hosting-deploy@v0
