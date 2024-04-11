@@ -24,19 +24,19 @@ export class HomeComponent implements  OnInit {
     private authService: AuthService,
     private productService: ProductService) {}
   ngOnInit(): void {
-    // this.authService.user$.subscribe(user=>{
-    //   if(user){
-    //     this.isLogOut = true;
-    //     this.authService.currentUserSignal.set({
-    //       email: user.email!,
-    //       userName: user.displayName!,
+    this.authService.user$.subscribe(user=>{
+      if(user){
+        this.isLogOut = true;
+        this.authService.currentUserSignal.set({
+          email: user.email!,
+          userName: user.displayName!,
 
-    //     });
-    //   }else{
-    //     this.authService.currentUserSignal.set(null);
-    //   }
-    //   console.log(this.authService.currentUserSignal());
-    // });
+        });
+      }else{
+        this.authService.currentUserSignal.set(null);
+      }
+      console.log(this.authService.currentUserSignal());
+    });
 
     this.productService.getProductsSmall().then((products) => {
         this.products = products;
